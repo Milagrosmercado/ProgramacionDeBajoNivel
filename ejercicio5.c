@@ -9,4 +9,4 @@ int main() {
  return 0;
 }
 
-//investigar que es ASCII
+//investigar que es ASCII y porque se obtiene de esa manera
