@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
         
     }
 
-    printf("Máximo: %d", maximo);
+    printf("Maximo: %d", maximo);
 
-    return maximo;
+    return 0;
 }
