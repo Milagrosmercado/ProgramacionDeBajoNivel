@@ -4,7 +4,7 @@
 
 int main(int argc, char const *argv[])
 {
-    int numeros[] = {1,2,3,-4,6};
+    int numeros[] = {1,2,3,4,6};
     int minimo = numeros[0];
 
     for (int i = 0; i < sizeof(numeros) / sizeof(int); i++) 

@@ -4,7 +4,7 @@
 
 int main(int argc, char const *argv[])
 {
-    int numeros[] = {5, 5, 5, 5};
+    int numeros[] = {8, 3, 4, 7};
     int contador;
     int resultado;
 
