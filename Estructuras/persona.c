@@ -36,9 +36,9 @@ void cambiarDatoDePersona(struct Persona dato)
     int opcion;
     printf("Elija una de las siguientes opciones:\n");
     printf("Opcion1: Cambiar nombre \n");
-    printf("Opcion1: Cambiar edad \n");
-    printf("Opcion1: Cambiar numero de persona \n");
-    printf("Opcion1: Cambiar documento \n");
+    printf("Opcion2: Cambiar edad \n");
+    printf("Opcion3: Cambiar numero de persona \n");
+    printf("Opcion4: Cambiar documento \n");
 
     printf("¿Que opcion desea elegir?:");
     scanf("%d", &opcion);
@@ -47,29 +47,29 @@ void cambiarDatoDePersona(struct Persona dato)
     case 1:
         printf("Nuevo nombre:");
         scanf("%s", persona1.nombre);
-        printf("Nombre cambiado");
+        printf("Nombre cambiado \n");
         break;
 
     case 2:
         printf("Nueva edad:");
         scanf("%d", &persona1.edad);
-        printf("Edad cambiada");
+        printf("Edad cambiada \n");
         break;
 
     case 3:
         printf("Nuevo numero de persona:");
         scanf("%f", &persona1.numeroDePersona);
-        printf("Nuemero de persona cambiado");
+        printf("Nuemero de persona cambiado \n");
         break;
 
     case 4:
         printf("Nuevo documento:");
         scanf("%u", &persona1.documento);
-        printf("Documento cambiado");
+        printf("Documento cambiado \n");
         break;
 
     default:
-        printf("Opcion no encontrada");
+        printf("Opcion no encontrada \n");
     }
 }
 int main(int argc, char const *argv[])
