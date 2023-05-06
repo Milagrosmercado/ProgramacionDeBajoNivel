@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/workspace/ProgramacionDeBajoNivelEjercicios/FuncionesStructTypedef",
-      "program": "c:/workspace/ProgramacionDeBajoNivelEjercicios/FuncionesStructTypedef/build/Debug/outDebug",
+      "cwd": "c:/workspace/ProgramacionDeBajoNivelEjercicios/Estructuras",
+      "program": "c:/workspace/ProgramacionDeBajoNivelEjercicios/Estructuras/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
