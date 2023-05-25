@@ -39,44 +39,44 @@ void obtenerLargoDeLaLista(Lista *nuevaLista)
 void imprimirLista(Lista *nuevaLista)
 {
     Lista *actual = nuevaLista; // puntero que va a ir recorriendo la lista
-    int numeroDeLugar = 0;
+    int numeroDeLugar = 0;  // para que en la lista indique el lugar en el que está
     printf("Lista: \n");
-    for (actual = nuevaLista; actual != NULL; actual = actual->siguiente)
+    for (actual = nuevaLista; actual != NULL; actual = actual->siguiente)  // recorre toda la lista
     {
         numeroDeLugar++;
         printf("%d: %d \n", numeroDeLugar, actual->valor);
     }
 }
 
-int obtenerElemento(Lista *nuevaLista, int posicion)
+int obtenerElemento(Lista *nuevaLista, int posicion)   // a partir de la posición se encuentra el elemento
 {
     Lista *actual = nuevaLista;
     int nav = 1;
-    int seEncontro;
+    int seEncontro;  // es como un booleano, cuando es 0 da falso y cuando es 1 da verdadero
     for (actual = nuevaLista; actual != NULL; actual = actual->siguiente)
     {
-        if (posicion == nav)
+        if (posicion == nav)  // sise encuentra
         {
-            printf("El elemento de la posicion %d es %d \n", posicion, actual->valor);
-            seEncontro = 1;
+            printf("El elemento de la posicion %d es %d \n", posicion, actual->valor);  //imprime el elemento que se encontró
+            seEncontro = 1;  // el booleano da verdadero
         }
-        nav++;
+        nav++;  // si no se encuentra se sigue buscando
     }
-    if (seEncontro != 1)
+    if (seEncontro != 1)  // si no se encuentra el booleano es falso
     {
         printf("NO SE ENCONTRO \n");
     }
     return nav;
 }
 
-void eliminarElemento(Lista *nuevaLista, int posicion)
+void eliminarElemento(Lista *nuevaLista, int posicion)  // el valor del elemento pasa a ser null
 {
     Lista *actual = nuevaLista;
     int nav = 1;
     int seEncontro;
     for (actual = nuevaLista; actual != NULL; actual = actual->siguiente)
     {
-        if (posicion == nav)
+        if (posicion == nav)  // se encontró el elemento que se quiere eliminar
         {
             printf("SE ELIMINO EL ELEMENTO %d QUE TENIA EL VALOR: %d \n", posicion, actual->valor);
             actual->valor = NULL;
@@ -86,7 +86,7 @@ void eliminarElemento(Lista *nuevaLista, int posicion)
 
 }
 
-int main(int argc, char const *argv[])
+int main(int argc, char const *argv[])   //pruebas
 {
     Lista *lista = crearLista();
 
