@@ -3,36 +3,34 @@
 
 typedef struct structLista
 {
-    int dato;
-    struct structNodo *siguiente;
+    int *dato;
+    struct structLista *siguiente;
 } Lista;
 
 int contador = 0;
 
 Lista *crearEInicializarLista() // se crea la lista
 {
-    Lista *lista = NULL; // el primer lugar de la lista es NULL porque no se agregó nada
-    return lista;        
-    printf("se creó una lista");
+    Lista *nuevaLista = NULL; // el primer lugar de la lista es NULL porque no se agregó nada
+    return nuevaLista;        
+   
 }
 
-Lista *nuevoNodo(int dato) // se hace el nodo que sería el lugar que ocupa los lugares de la lista
-{
-    Lista *a; // puntero donde va el dato
-    a = malloc(sizeof(Lista));
-    a->dato = dato;      // se le asigna que el dato va a estar en ese puntero
-    a->siguiente = NULL; // el valor siguiente a cada vez que se agregue un dato va a sel nulo
-    return a;
-}
-
-void agregarUnElemento(Lista *lista, int entrada)
-{
-    Lista *nuevo;
-    nuevo = nuevoNodo(entrada); // se utiliza (nuevoNodo) para agregar uno nuevo en el siguiente lugar
-    nuevo->siguiente = NULL;    // como el lugar null de antes ahora ocupa un dato ahora el siguiente de este es null
-    lista = nuevo;
-    printf("%d \n", entrada); // imprime a medida que se agrega un dato a la lista
-    contador++;               // para ver cuantos elementos hay
+Lista *agregarUnElemento(Lista *nuevaLista, int dato) {
+    Lista *nodoNuevo = malloc(sizeof(Lista));
+    nodoNuevo->dato = dato;
+    nodoNuevo->siguiente = NULL;
+    if (nuevaLista == NULL) {
+        nuevaLista = nodoNuevo;
+    } else {
+        Lista *cursor = nuevaLista;
+        while (cursor->siguiente != NULL) {
+            cursor = cursor->siguiente;
+        }
+        cursor->siguiente = nodoNuevo;
+    }
+    contador++;
+    return nuevaLista;
 }
 
 void obtenerLargoDeLaLista()
@@ -40,23 +38,23 @@ void obtenerLargoDeLaLista()
     printf("El largo de la lista es: %d \n", contador);
 }
 
-void imprimirLista(Lista *lista)
+void imprimirLista(Lista *nuevaLista)
 {
-    Lista *actual;
+    Lista *actual = nuevaLista;
     printf("Lista:");
-    while (actual != NULL)
+    while(actual != NULL)
     {
-       actual = actual->siguiente;
-       printf("%d", actual->dato);
+        actual = actual->siguiente;
+        printf("valor:%d", actual->dato);
     }
 }
 
 int main(int argc, char const *argv[])
 {
-    Lista *nuevaLista = crearEInicializarLista();
-    agregarUnElemento(nuevaLista, 1);
-    agregarUnElemento(nuevaLista, 2);
+    Lista *list = crearEInicializarLista();
+    agregarUnElemento(list, 1);
+    agregarUnElemento(list, 2);
     obtenerLargoDeLaLista();
-    imprimirLista(nuevaLista);
+    imprimirLista(list);
     return 0;
 }
