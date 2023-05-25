@@ -4,28 +4,26 @@ typedef struct structLista
 {
     int valor;
     struct structLista *siguiente;
-    int *posicionDelElemento;
 } Lista;
 
 int contador = 0;
 
  Lista *crearLista() 
 {
-    Lista *nuevaLista = NULL; 
+    Lista *nuevaLista = NULL;   // se inicializa en null
     return nuevaLista;
 }
 
 Lista *agregarElemento(Lista *nuevaLista, int valor)
 {
     Lista *nodoNuevo = malloc(sizeof(Lista));
-    nodoNuevo->valor = valor;
-    nodoNuevo->siguiente = NULL;
-    if (nuevaLista == NULL)
+    nodoNuevo->valor = valor;   // se le asigna el valor que va a tener ese lugar
+    nodoNuevo->siguiente = NULL;    // el siguiente lugar siempre va a ser null
+    if (nuevaLista == NULL) //si la lista está vacia
     {
-        nuevaLista = nodoNuevo;
-        nodoNuevo->posicionDelElemento = nodoNuevo->posicionDelElemento++;
+        nuevaLista = nodoNuevo;    
     }
-    else
+    else   // si ya hay un elemento en la lista
     {
         Lista *cursor = nuevaLista;
         while (cursor->siguiente != NULL)
@@ -33,9 +31,8 @@ Lista *agregarElemento(Lista *nuevaLista, int valor)
             cursor = cursor->siguiente;
         }
         cursor->siguiente = nodoNuevo;
-        nodoNuevo->posicionDelElemento = nodoNuevo->posicionDelElemento++;
     }
-    contador++;
+    contador++;   // contador para saber el largo de la lista
     return nuevaLista;
 }
 void obtenerLargoDeLaLista()
@@ -45,13 +42,13 @@ void obtenerLargoDeLaLista()
 
 void imprimirLista(Lista *nuevaLista)
 {
-    Lista *actual = nuevaLista;
+    Lista *actual = nuevaLista;    //puntero que va a ir recorriendo la lista
     int numeroDeLugar = 0;
     printf("Lista: \n");
     for (actual = nuevaLista; actual != NULL; actual = actual->siguiente)
     {
-        numeroDeLugar++;
-        printf("%d: %d \n", numeroDeLugar, actual->valor);
+        numeroDeLugar++;  
+        printf("%d: %d \n", numeroDeLugar, actual->valor); 
     }
 }
 
