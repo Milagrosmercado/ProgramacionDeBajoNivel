@@ -83,7 +83,8 @@ void eliminarElemento(Lista *nuevaLista, int posicion) // el valor del elemento 
             for(actual; actual->siguiente != NULL; actual = actual->siguiente){
                 actual->valor = actual->siguiente->valor;
             }
-            actual->valor = NULL;
+            
+            remove(actual);
         }
         nav++;
     }
@@ -110,7 +111,7 @@ int main(int argc, char const *argv[]) // pruebas
     printf("\n\nesperado:eliminar elemento 4 que tiene el valor 40\n");
     eliminarElemento(lista, 4);
 
-    printf("\n\nesperado: 10 20 30 0 50 60\n");
+    printf("\n\nesperado: 10 20 30 50 60 0\n");
     imprimirLista(lista);
     
 
